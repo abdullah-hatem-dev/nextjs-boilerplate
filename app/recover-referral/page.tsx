@@ -19,7 +19,7 @@ export default function RecoverReferralPage() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h2>استرجاع كود الدعوة</h2>
+      <h2>استرجاع كود الدعوة ان</h2>
 
       {code ? (
         <>
