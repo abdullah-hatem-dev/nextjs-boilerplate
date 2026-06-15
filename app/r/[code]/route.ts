@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   request: Request,
-  { params }: { params: { code: string } }
+  context: { params: Promise<{ code: string }> }
 ) {
-  const code = params.code;
+  const { code } = await context.params;
 
   const response = NextResponse.redirect(
     "https://play.google.com/store/apps/details?id=com.abdullah.quranm"
