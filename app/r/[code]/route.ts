@@ -1,4 +1,3 @@
-import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 export async function GET(
@@ -11,10 +10,10 @@ export async function GET(
     "https://play.google.com/store/apps/details?id=com.abdullah.quranm"
   );
 
-  response.cookies.set("referral_code", code, {
-    path: "/",
-    httpOnly: false,
-  });
+  response.headers.set(
+    "Set-Cookie",
+    `referral_code=${code}; Path=/; Max-Age=2592000`
+  );
 
   return response;
 }
